@@ -1,15 +1,30 @@
 # Gerenciador-de-gastos
 Repositório criado para o projeto da disciplina engenharia de software.
 
-Para instalar dependencias do backend:
 
+## Backend
+
+Após a instalação do python é recomendável criar um ambiente virtual, que pode ser feito da seguinte forma
+
+
+**Windows**
+
+    python -m venv .venv
+    .\.venv\Scripts\activate
     pip install -r requirements.txt
 
-Para testar:
+**Linux**
+
+    python -m venv .venv
+    source .venv/bin/activate   
+    pip install -r requirements.txt
+
+
+### Teste
 
     python test.py
 
-Para iniciar Servidor:
+### Iniciando servidor
+    uvicorn --port 8000 --reload backend.main:app
 
-    uvicorn --port 8000 --reload app.main:app
-
+Agora é só acessar o link http://localhost:8000
