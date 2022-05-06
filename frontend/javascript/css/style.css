@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+    background-color: #00A8A3;;
+}
+
+header {
+    height: 100px;
+    background-color: white;
+    padding: 10px;
+    color:#00A8A3;
+    text-align:left;
+}
+.htitle{
+    margin-top: 40px;
+}
+
+.span {
+    color: gray;
+}
+
+main {
+    padding: 30px 50px;
+    color:#00A8A3;
+}
+
+.title {
+    background-color: white;
+}
+
+.textt{
+    margin-left: 50px;
+}
+
+.card {
+    background-color: white;
+    padding: 50px;
+    text-align: center;
+    
+}
+
+input {
+    border: 1px solid grey;
+    border-radius: 3px;
+    margin: 10px;
+}
+
+select {
+    border: 1px solid grey;
+    border-radius: 3px;
+    outline: 0;
+    margin: 10px;
+}
+
+button {
+    border: 0px;
+    padding: 5px;
+    color: white;
+    background-color:#00A8A3;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: all ease 0.2s;
+}
+
+button:hover {
+    background-color:#046461;
+}
+
+.content {
+    margin-top:15px;
+}
+
+table {
+    color: black;
+    border-collapse: collapse;
+    border: 1px solid grey;
+    width: 100%;
+}
