@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Despesas</title>
+
+    <link rel="stylesheet" href="javascript/css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="javascript/js/script1.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="img/logo.png">
+            <div>
+                <h1>Minhas Despesas</h1>
+                <span>Controle de Gastos</span>
+            </div>
+
+            <nav>
+                <ul class="menu">
+                    <li><a href="cartoes.html">Cartões</a></li>
+                    <li><a href="consultas.html">Consultas</a></li>
+                    <li><a href="despesas.html">Despesas</a></li>
+                </ul>    
+            </nav>
+        </div>
+
+    </header>
+
+    <main>
+        <div class="box"> 
+            <h2>Novo Cartão</h2>
+            <div class="content">
+                <input type="text" placeholder="Nome">
+                <select id="bandeira" placeholder="Bandeira">
+                    <option value="Option 1">Mastercard</option>
+                    <option value="Option 2">Visa</option>
+                    <option value="Option 3">Elo</option>
+                    <option value="Option 4">Hipercard</option>
+                </select>
+                <input type="number" placeholder="Dia de Vencimento">
+                <input type="number" placeholder="Limite">
+                <button onclick="cartao.adicionar()">Add</button>
+            </div>
+        </div>
+
+        <div class="box">
+            <h2>Cartões Cadastrados</h2>
+        </div>
+    </main>
+
+</body>
+</html>
