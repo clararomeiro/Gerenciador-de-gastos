@@ -14,8 +14,9 @@ header {
     color:#00A8A3;
     text-align:left;
 }
+
 .htitle{
-    margin-top: 40px;
+    margin-top: 15px;
 }
 
 .span {
@@ -37,9 +38,8 @@ main {
 
 .card {
     background-color: white;
-    padding: 50px;
+    padding: 20px 10px 20px 10px;
     text-align: center;
-    
 }
 
 input {
@@ -71,6 +71,7 @@ button:hover {
 
 .content {
     margin-top:15px;
+    background-color: white;
 }
 
 table {
@@ -78,4 +79,129 @@ table {
     border-collapse: collapse;
     border: 1px solid grey;
     width: 100%;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    height: 100px;
+    width: 100%;
+    z-index: 1;
+    background-color: white
+}
+
+#logo {
+    float: left;
+    width: 100px;
+    height: 100px;
+}
+
+nav:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+
+.nav-container{
+    max-width: 1200px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-container ul{
+    float: right;
+    height: 100px;
+    line-height: 100px;
+    margin: 0;
+}
+
+.nav-container li{
+    list-style: none;
+    float: left;
+    margin: 0 15px;
+}
+
+.nav-container li a{
+    text-decoration: none;
+    color: #00A8A3;
+    transition: .5s;
+}
+
+.nav-container li a:hover{
+    color: #046461;
+}
+
+/* consultas */
+
+.gastos {
+    background-color: white;
+    text-align: center;
+}
+
+.tituloc {
+    background-color: white;
+    text-align: center;
+    padding: 20px 0px 20px 0px;
+}
+
+.lista {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.resultados {
+    text-align: left;
+}
+
+#digitar-consulta {
+    width: 250px;
+    height: 20px;
+}
+
+.conteudo{
+    margin-top: 50px;
+    padding: 20px;
+}
+
+/* despesas */
+
+#valor {
+    display: block;
+    margin-bottom: 20px;
+}
+
+#descricao {
+    display: block;
+    margin-bottom: 20px;
+}
+
+#parcela {
+    display: block;
+}
+
+#data {
+    display: block;
+    margin-bottom: 20px;
+}
+
+#cartao {
+    display: block;
+    margin-bottom: 20px;
+}
+
+#categoria {
+    display: block;
+}
+
+.lado-esquerdo {
+   float: left;
+   background-color: white;
+   display: block;
+}
+
+.lado-direito{
+   float: right;
+   background-color: white;
 }

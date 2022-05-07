@@ -34,38 +34,30 @@
     </header>
 
     <main>
-        <div class="title">
-            <h2 class="textt">Novo Cartão</h2>
+        <div class="tituloc">
+            <h2 class="consultar">Consultar Gastos</h2>
+            <input type="text" id="digitar-consulta" placeholder="Digite sua consulta aqui...">
+            <button onclick="cartao.adicionar()">Search</button>
         </div>
 
-        <div class="card">
-            <div class="lineInput">
-                <input type="text" id="nome" placeholder="Nome">
-                    <select id="bandeira" placeholder="Bandeira">
-                        <option value="Option 1">Bandeira</option>
-                        <option value="Option 2">Option 2</option>
-                        <option value="Option 3">Option 3</option>
-                        <option value="Option 4">Option 4</option>
-                        <option value="Option 5">Option 5</option>
-                    </select>
-                <input type="text" id="vencimento" placeholder="Dia de Vencimento">
-                <input type="text" id="valor" placeholder="R$">
-                <button onclick="cartao.adicionar()">Add</button>
-            
-            <div class="lista">
+        <div class="gastos">
+            <div class="conteudo">
+                <h2 class="resultados">Resultados da Consulta</h2>
                 <table border="1">
                     <thead>
-                        <th>#</th>
-                        <th>Nome</th>
-                        <th>Bandeira</th>
-                        <th>Dia de Vencimento</th>
+                        <th>Data</th>
+                        <th>Cartão</th>
+                        <th>Categoria</th>
+                        <th>Descrição</th>
+                        <th>Parcelas</th>
                         <th>Valor</th>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
-                            <td>Exemplo</td>
+                            <td>05/06/2022</td>
                             <td>Visa</td>
+                            <td>Exemplo</td>
+                            <td>Game</td>
                             <td>5</td>
                             <td>R$ 500</td>
                         </tr>
@@ -75,7 +67,6 @@
             </div>
             
             </div>
-        </div>
 
     </main>
 </body>

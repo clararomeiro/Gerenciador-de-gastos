@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html alng="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta jttp-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content = "width=device-widht, initial-scale=1.0">
+    <title>Minhas Despesas</title>
+
+    <link rel="stylesheet" href="javascript/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="javascript/js/script1.js"></script>
+</head>
+<body>
+    
+    <header>
+        <nav>
+            <div class = "nav-container">
+                <img id="logo" src="img/logo.png">
+                <h1 class="htitle">Minhas Despesas</h1>
+                <span class="span">Controle de gastos</span>
+            <ul>
+                <li><a href="index.html">Cartões</a></li>
+                <li><a href="despesas.html">Despesas</a></li>
+                <li><a href="consultas.html">Consultas</a></li>
+            </ul>   
+            </div>
+        </nav>
+       
+    </header>
+
+    <main>
+        <div class="title">
+            <h2 class="textt">Nova Despesa</h2>
+        </div>
+
+            <div class="lineInput">
+                <div class="lado-esquerdo">
+                    <input type="text" id="valor" placeholder="Valor">
+                    <input type="text" id="descricao" placeholder="Descrição">
+                        <select id="parcela" placeholder="Parcela">
+                            <option value="opcao">Parcelas</option>
+                            <option value="1x">1x</option>
+                            <option value="2x">2x</option>
+                            <option value="3x">3x</option>
+                            <option value="4x">4x</option>
+                            <option value="5x">5x</option>
+                            <option value="6x">6x</option>
+                            <option value="7x">7x</option>
+                            <option value="8x">8x</option>
+                            <option value="9x">9x</option>
+                            <option value="10x">10x</option>
+                            <option value="11x">11x</option>
+                            <option value="12x">12x</option>
+                        </select>
+                </div>
+                <div class="lado-direito">
+                    <input type="text" id="data" placeholder="Data">
+                    <select id="cartao" placeholder="Cartao">
+                        <option value="opcao">Cartão</option>
+                        <option value="Option 1">Bandeira</option>
+                        <option value="Option 2">Option 2</option>
+                        <option value="Option 3">Option 3</option>
+                        <option value="Option 4">Option 4</option>
+                        <option value="Option 5">Option 5</option>
+                    </select>
+                    <select id="categoria" placeholder="categoria">
+                        <option value="opcao">Categoria</option>
+                        <option value="Option 1">Option 1</option>
+                        <option value="Option 2">Option 2</option>
+                        <option value="Option 3">Option 3</option>
+                        <option value="Option 4">Option 4</option>
+                        <option value="Option 5">Option 5</option>
+                    </select>
+                </div>
+                <button onclick="cartao.adicionar()">Add</button>
+            </div>
+
+    </main>
+</body>
+</html>
