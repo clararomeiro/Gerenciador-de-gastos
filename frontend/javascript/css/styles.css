@@ -10,7 +10,8 @@ header{
   background-color: #FFFFFF;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.218);
   color:#00A8A3;
-  justify-content: space-around;
+  justify-content: space-between;
+  display: flex;
   
 }
 header > div{
@@ -24,6 +25,26 @@ header > div > img {
     max-height: 130px;
 }
 
+header > nav{
+   background-color: white;
+   align-self: flex-end;
+
+}
+
+nav > ul{
+    display: flex;
+    padding-bottom: 10px;
+    padding-right: 40px;
+}
+
+
+nav > ul >li{
+    background-color: white;
+    border: black;
+    list-style: none;
+    display: inline-block;
+    padding-left: 20px;
+}
 
 
 span{
@@ -42,19 +63,34 @@ div.box{
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.218);
 }
 
-h1{
-
-}
 
 h2{
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-left: 10px;
+    padding-left: 30px;
     color: #00A8A3;
 }
 
 .content{
-    justify-content: space-around;
+    display:flex;
+    justify-content: space-evenly;
     padding-left: 10px;
+    padding-right: 40px;
     padding-bottom: 20px;
+}
+
+.inputs{
+    border-color: gray;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+button{
+    color: white;
+    background-color: #00A8A3;
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.218);
+    font-weight: bold;
 }

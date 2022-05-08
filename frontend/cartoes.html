@@ -22,15 +22,15 @@
                 <h1>Minhas Despesas</h1>
                 <span>Controle de Gastos</span>
             </div>
-
-            <nav>
-                <ul class="menu">
-                    <li><a href="cartoes.html">Cartões</a></li>
-                    <li><a href="consultas.html">Consultas</a></li>
-                    <li><a href="despesas.html">Despesas</a></li>
-                </ul>    
-            </nav>
         </div>
+  
+        <nav>
+            <ul>
+                <li><a href="cartoes.html">Cartões</a></li>
+                <li><a href="consultas.html">Consultas</a></li>
+                <li><a href="despesas.html">Despesas</a></li>
+            </ul>    
+        </nav>
 
     </header>
 
@@ -38,15 +38,15 @@
         <div class="box"> 
             <h2>Novo Cartão</h2>
             <div class="content">
-                <input type="text" placeholder="Nome">
-                <select id="bandeira" placeholder="Bandeira">
+                <input type="text" class="inputs" placeholder="Nome">
+                <select id="bandeira" class="inputs" placeholder="Bandeira">
                     <option value="Option 1">Mastercard</option>
                     <option value="Option 2">Visa</option>
                     <option value="Option 3">Elo</option>
                     <option value="Option 4">Hipercard</option>
                 </select>
-                <input type="number" placeholder="Dia de Vencimento">
-                <input type="number" placeholder="Limite">
+                <input type="number" class="inputs" placeholder="Dia de Vencimento">
+                <input type="number" class="inputs" placeholder="Limite">
                 <button onclick="cartao.adicionar()">Add</button>
             </div>
         </div>
