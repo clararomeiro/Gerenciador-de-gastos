@@ -55,6 +55,19 @@ span{
     color: grey;
 }
 
+a:link{
+    color: #00A8A3;
+    text-decoration: none;
+}
+
+a:hover   {
+    color:#033f3d
+}
+
+a:visited{
+    background: gray;
+}
+
 
 
 div.box{
@@ -100,6 +113,7 @@ button{
     align-self: center;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.218);
     font-weight: bold;
+    margin-bottom: 5px;
 }
 
 #consulta{
@@ -124,4 +138,15 @@ table {
 
 td{
     text-align: center;
+}
+
+#conteiner{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.coluna{
+    margin: 5px;
+    padding: 5px;
 }

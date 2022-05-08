@@ -7,7 +7,11 @@ class Cartao {
     }
     
     adicionar() {
-        alert('Cartão adicionado.');
+        alert('Cartão adicionado com sucesso!');
+    }
+
+    adicionarDespesa(){
+        alert('Despesa adicionada com sucesso!')
     }
 }
 

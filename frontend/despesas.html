@@ -29,23 +29,22 @@
         <nav>
             <ul>
                 <li><a href="cartoes.html">Cartões</a></li>
-                <li><a href="consultas.html">Consultas</a></li>
                 <li><a href="despesas.html">Despesas</a></li>
+                <li><a href="consultas.html">Consultas</a></li>
             </ul>    
         </nav>
 
     </header>
 
     <main>
-        <div class="title">
-            <h2 class="textt">Nova Despesa</h2>
-        </div>
+        <div class="box">
+            <h2>Nova Despesa</h2>
 
-            <div class="lineInput">
-                <div class="lado-esquerdo">
-                    <input type="text" id="preco" placeholder="Valor">
-                    <input type="text" id="descricao" placeholder="Descrição">
-                        <select id="parcela" placeholder="Parcela">
+            <div id="conteiner">
+                <div class="coluna">
+                    <input type="number" class="inputs" placeholder="Valor">
+                    <input type="text" class="inputs" placeholder="Descrição">
+                        <select class="inputs" placeholder="Parcela">
                             <option value="opcao">Parcelas</option>
                             <option value="1x">1x</option>
                             <option value="2x">2x</option>
@@ -61,9 +60,9 @@
                             <option value="12x">12x</option>
                         </select>
                 </div>
-                <div class="lado-direito">
-                    <input type="text" id="data" placeholder="Data">
-                    <select id="cartao" placeholder="Cartao">
+                <div class="coluna">
+                    <input type="date" class="inputs" placeholder="Data">
+                    <select class="inputs" placeholder="Cartao">
                         <option value="opcao">Cartão</option>
                         <option value="Option 1">Bandeira</option>
                         <option value="Option 2">Option 2</option>
@@ -71,7 +70,7 @@
                         <option value="Option 4">Option 4</option>
                         <option value="Option 5">Option 5</option>
                     </select>
-                    <select id="categoria" placeholder="categoria">
+                    <select class="inputs" placeholder="categoria">
                         <option value="opcao">Categoria</option>
                         <option value="Option 1">Option 1</option>
                         <option value="Option 2">Option 2</option>
@@ -80,8 +79,9 @@
                         <option value="Option 5">Option 5</option>
                     </select>
                 </div>
-                <button onclick="cartao.adicionar()">Add</button>
+                <button onclick="cartao.adicionarDespesa()">Add</button>
             </div>
+        </div>
 
     </main>
 </body>
