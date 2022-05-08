@@ -7,7 +7,7 @@
     <meta name="viewport" content = "width=device-widht, initial-scale=1.0">
     <title>Minhas Despesas</title>
 
-    <link rel="stylesheet" href="javascript/css/style.css">
+    <link rel="stylesheet" href="javascript/css/styles.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,32 +18,38 @@
 <body>
     
     <header>
-        <nav>
-            <div class = "nav-container">
-                <img id="logo" src="img/logo.png">
-                <h1 class="htitle">Minhas Despesas</h1>
-                <span class="span">Controle de gastos</span>
-            <ul>
-                <li><a href="index.html">Cartões</a></li>
-                <li><a href="despesas.html">Despesas</a></li>
-                <li><a href="consultas.html">Consultas</a></li>
-            </ul>   
+        <div>
+            <img src="img/logo.png">
+            <div>
+                <h1>Minhas Despesas</h1>
+                <span>Controle de Gastos</span>
             </div>
+        </div>
+  
+        <nav>
+            <ul>
+                <li><a href="cartoes.html">Cartões</a></li>
+                <li><a href="consultas.html">Consultas</a></li>
+                <li><a href="despesas.html">Despesas</a></li>
+            </ul>    
         </nav>
-       
+
     </header>
 
     <main>
-        <div class="tituloc">
-            <h2 class="consultar">Consultar Gastos</h2>
-            <input type="text" id="digitar-consulta" placeholder="Digite sua consulta aqui...">
-            <button onclick="cartao.adicionar()">Search</button>
+        <div class="box">
+            <h2>Consultar Gastos</h2>
+            <div id="consulta">
+                <input type="text" class="inputs" placeholder="Digite sua consulta aqui...">
+                <button onclick="cartao.adicionar()">Search</button>
+            </div>
+            
         </div>
 
-        <div class="gastos">
-            <div class="conteudo">
-                <h2 class="resultados">Resultados da Consulta</h2>
-                <table border="1">
+        <div class="box">
+            <div id="tabela">
+                <h2>Resultados da Consulta</h2>
+                <table border = "1">
                     <thead>
                         <th>Data</th>
                         <th>Cartão</th>

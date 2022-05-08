@@ -46,6 +46,10 @@ nav > ul >li{
     padding-left: 20px;
 }
 
+nav > ul > li > a{
+    color: #00A8A3;
+}
+
 
 span{
     color: grey;
@@ -73,8 +77,8 @@ h2{
 
 .content{
     display:flex;
-    justify-content: space-evenly;
-    padding-left: 10px;
+    justify-content: flex-start;
+    padding-left: 25px;
     padding-right: 40px;
     padding-bottom: 20px;
 }
@@ -83,6 +87,7 @@ h2{
     border-color: gray;
     border-radius: 5px;
     border-width: 1px;
+    margin: 5px;
 }
 
 button{
@@ -91,6 +96,32 @@ button{
     border: none;
     border-radius: 5px;
     width: 100px;
+    min-height: 30px;
+    align-self: center;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.218);
     font-weight: bold;
+}
+
+#consulta{
+    display:flex;
+    justify-content:center;
+    padding-left: 25px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+}
+
+table {
+    margin: auto;
+    color: black;
+    border-collapse: collapse;
+    border: 1px solid grey;
+    width: 95%;
+}
+
+#tabela{
+    padding-bottom: 10px;
+}
+
+td{
+    text-align: center;
 }
