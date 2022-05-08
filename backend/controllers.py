@@ -9,29 +9,32 @@ class Controlador:
     despesas: list[Despesa] = field(default_factory=list)
 
     def adicionar_cartao(self, cartao: Cartao):
-        if cartao.id in [c.id for c in self.cartoes]:
-            raise ValueError('Esse id já existe')
+        if cartao.id in (c.id for c in self.cartoes):
+            raise ValueError('Esse id de cartão já existe')
         self.cartoes.append(cartao)
 
     def remover_cartao(self, id: int):
-        result = [cartao for cartao in self.cartoes if cartao.id == id]
-        if not result:
+        try:
+            result = next(cartao for cartao in self.cartoes if cartao.id == id)
+        except StopIteration:
             raise KeyError('id não encontrado')
-        self.cartoes.remove(result[0])
+        self.cartoes.remove(result)
 
     def adicionar_despesa(self, despesa: Despesa):
-        if despesa.id in [d.id for d in self.despesas]:
+        if despesa.id in (d.id for d in self.despesas):
             raise ValueError('Esse id de despesa já existe')
 
-        if despesa.id_cartao not in [c.id for c in self.cartoes]:
+        if despesa.id_cartao not in (c.id for c in self.cartoes): 
             raise ValueError('Esse id de cartão não existe')
+
         self.despesas.append(despesa)
 
     def remover_despesa(self, id: int):
-        result = [despesa for despesa in self.despesas if despesa.id == id]
-        if not result:
+        try:
+            result = next(despesa for despesa in self.despesas if despesa.id == id)
+        except StopIteration:
             raise KeyError('id não encontrado')
-        self.despesas.remove(result[0])
+        self.despesas.remove(result)
 
     def gerar_relatorio(self):
         pass # TODO
