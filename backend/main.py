@@ -9,13 +9,12 @@ app = FastAPI()
 
 app.mount('/frontend',
     StaticFiles(directory='frontend/'),
-    name="front"
+    name="static"
 )
 
 @app.get('/')
 def home_page(request: Request):
-    return tem.TemplateResponse('index.html', {'request': request})
-
+    return tem.TemplateResponse('cartoes.html', {'request': request})
 
 @app.get('/despesas')
 def despesas_page(request: Request):
