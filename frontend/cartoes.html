@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
     
-    <script src="/frontend/js/script1.js"></script>
+    <script src="/frontend/js/scripts.js"></script>
 </head>
 <body>
     <header>
@@ -38,16 +38,16 @@
         <div class="box"> 
             <h2>Novo Cartão</h2>
             <div class="content">
-                <input type="text" class="inputs" placeholder="Nome">
+                <input id="nome" type="text" class="inputs" placeholder="Nome">
                 <select id="bandeira" class="inputs" placeholder="Bandeira">
-                    <option value="Option 1">Mastercard</option>
-                    <option value="Option 2">Visa</option>
-                    <option value="Option 3">Elo</option>
-                    <option value="Option 4">Hipercard</option>
+                    <option>Mastercard</option>
+                    <option>Visa</option>
+                    <option>Elo</option>
+                    <option>Hipercard</option>
                 </select>
-                <input type="number" class="inputs" placeholder="Dia de Vencimento">
-                <input type="number" class="inputs" placeholder="Limite">
-                <button onclick="cartao.adicionar()">Add</button>
+                <input id="dia_vencimento" type="number" class="inputs" placeholder="Dia de Vencimento">
+                <input id="limite" type="number" class="inputs" placeholder="Limite">
+                <button onclick="add_cartao()">Add</button>
             </div>
         </div>
 
@@ -62,10 +62,17 @@
                         <th>Dia de Vencimento</th>
                         <th>Limite</th>
                     </thead>
+                    <!-- Conteudo Aqui -->
                     <tbody>
+                        {% for cartao in cartoes %}
                         <tr>
-                            <!-- Conteudo Aqui -->
+                            <th>{{ loop.index }}</th>
+                            <th>{{ cartao.nome }}</th>
+                            <th>{{ cartao.bandeira }}</th>
+                            <th>{{ cartao.dia_vencimento }}</th>
+                            <th>{{ cartao.limite }}</th>
                         </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
 

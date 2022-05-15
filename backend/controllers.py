@@ -1,5 +1,5 @@
 from datetime import datetime as date
-from .models import Cartao, Despesa
+from .schemas import Cartao, Despesa
 from dataclasses import dataclass, field
 
 @dataclass
@@ -9,31 +9,31 @@ class Controlador:
     despesas: list[Despesa] = field(default_factory=list)
 
     def adicionar_cartao(self, cartao: Cartao):
-        if cartao.id in (c.id for c in self.cartoes):
-            raise ValueError('Esse id de cartão já existe')
+        assert cartao not in self.cartoes, 'O cartão já existe no sistema (nomes devem ser únicos)'
         self.cartoes.append(cartao)
 
-    def remover_cartao(self, id: int):
+    def remover_cartao(self, nome: str):
         try:
-            result = next(cartao for cartao in self.cartoes if cartao.id == id)
+            result = next(cartao for cartao in self.cartoes if cartao.nome == nome)
         except StopIteration:
-            raise KeyError('id não encontrado')
+            raise KeyError('nome não encontrado')
         self.cartoes.remove(result)
 
+
     def adicionar_despesa(self, despesa: Despesa):
-        if despesa.id in (d.id for d in self.despesas):
-            raise ValueError('Esse id de despesa já existe')
+        if despesa in self.despesas:
+            raise ValueError('Essa despesa já existe')
 
         if despesa.id_cartao not in (c.id for c in self.cartoes): 
             raise ValueError('Esse id de cartão não existe')
 
         self.despesas.append(despesa)
 
-    def remover_despesa(self, id: int):
+    def remover_despesa(self, nome: str):
         try:
-            result = next(despesa for despesa in self.despesas if despesa.id == id)
+            result = next(despesa for despesa in self.despesas if despesa.nome == nome)
         except StopIteration:
-            raise KeyError('id não encontrado')
+            raise KeyError('despesa (nome) não encontrado')
         self.despesas.remove(result)
 
     def gerar_relatorio(self):

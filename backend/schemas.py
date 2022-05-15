@@ -2,15 +2,16 @@ from pydantic import BaseModel
 from datetime import datetime as date
 
 class Cartao(BaseModel):
-    id: int
     nome: str
     bandeira: str
     dia_vencimento: int
     limite: float
-    lembrete: bool
+    lembrete: bool = True
+
+    def __eq__(self, outro) -> bool:
+        return self.nome == outro.nome
 
 class Despesa(BaseModel):
-    id: int
     nome: str
     desc: str
     valor: float
@@ -18,3 +19,6 @@ class Despesa(BaseModel):
     parcelas: int
     id_cartao: int
     data: date
+
+    def __eq__(self, outro) -> bool:
+        return self.nome == outro.nome
