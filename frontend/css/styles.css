@@ -90,7 +90,8 @@ h2{
 
 .content{
     display:flex;
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
     padding-left: 25px;
     padding-right: 40px;
     padding-bottom: 20px;
