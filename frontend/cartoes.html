@@ -70,7 +70,7 @@
                             <th>{{ cartao.nome }}</th>
                             <th>{{ cartao.bandeira }}</th>
                             <th>{{ cartao.dia_vencimento }}</th>
-                            <th>{{ cartao.limite }}</th>
+                            <th>R${{'%.2f' % cartao.limite }}</th>
                         </tr>
                         {% endfor %}
                     </tbody>
