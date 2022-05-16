@@ -26,7 +26,10 @@ def home_page(request: Request):
 
 @app.get('/despesas')
 def despesas_page(request: Request):
-    return tem.TemplateResponse('despesas.html', {'request': request})
+    return tem.TemplateResponse('despesas.html', {
+        'request': request,
+        'cartoes': system.cartoes
+    })
 
 
 @app.get('/consultas')
