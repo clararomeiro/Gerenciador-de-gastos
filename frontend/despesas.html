@@ -42,9 +42,9 @@
 
             <div id="conteiner">
                 <div class="coluna">
-                    <input type="number" class="inputs" placeholder="Valor">
-                    <input type="text" class="inputs" placeholder="Descrição">
-                        <select class="inputs" placeholder="Parcela">
+                    <input id="valor" type="number" class="inputs" placeholder="Valor">
+                    <input id="descricao" type="text" class="inputs" placeholder="Descrição">
+                        <select id="parcelas" class="inputs" placeholder="Parcela">
                             <option value="opcao">Parcelas</option>
                             <option value="1">1x</option>
                             <option value="2">2x</option>
@@ -61,23 +61,22 @@
                         </select>
                 </div>
                 <div class="coluna">
-                    <input type="date" class="inputs" placeholder="Data">
-                    <select class="inputs" placeholder="Cartao">
+                    <input id="data" type="date" class="inputs" placeholder="Data">
+                    <select id="cartao" class="inputs" placeholder="Cartao">
                         <!--Nome dos Cartões-->
                         {% for cartao in cartoes %}
                             <option>{{cartao.nome}}</option>
                         {% endfor %}
                     </select>
-                    <select class="inputs" placeholder="categoria">
-                        <option value="opcao">Categoria</option>
-                        <option value="Option 1">Option 1</option>
-                        <option value="Option 2">Option 2</option>
-                        <option value="Option 3">Option 3</option>
-                        <option value="Option 4">Option 4</option>
-                        <option value="Option 5">Option 5</option>
+                    <select id="categoria" class="inputs" placeholder="categoria">
+                        <option>Alimentação</option>
+                        <option>Transporte</option>
+                        <option>Entretenimento</option>
+                        <option>Investimento</option>
+                        <option>Outro</option>
                     </select>
                 </div>
-                <button onclick="cartao.adicionarDespesa()">Add</button>
+                <button onclick="add_despesa()">Add</button>
             </div>
         </div>
 

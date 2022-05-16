@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 
-from backend.schemas import Cartao
+from backend.schemas import Cartao, Despesa
 from backend.controllers import Controlador
 
 system = Controlador()
@@ -40,4 +40,8 @@ def consultas_page(request: Request):
 @app.post('/add-card')
 def add_cartao(cartao: Cartao):
     system.adicionar_cartao(cartao)
+
+@app.post('/add-despesa')
+def add_despesa(despesa: Despesa):
+    system.adicionar_despesa(despesa)
     

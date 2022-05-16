@@ -1,5 +1,6 @@
 from pydantic import BaseModel
-from datetime import datetime as date
+from datetime import date
+from uuid import uuid1
 
 class Cartao(BaseModel):
     nome: str
@@ -12,13 +13,10 @@ class Cartao(BaseModel):
         return self.nome == outro.nome
 
 class Despesa(BaseModel):
-    nome: str
+    id: str = uuid1()
     desc: str
     valor: float
     categoria: str # TODO: transformar em enum
     parcelas: int
-    id_cartao: int
+    nome_cartao: str
     data: date
-
-    def __eq__(self, outro) -> bool:
-        return self.nome == outro.nome

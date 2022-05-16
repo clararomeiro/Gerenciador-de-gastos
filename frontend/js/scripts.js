@@ -39,3 +39,30 @@ function add_cartao() {
         console.log(res)
     });
 }
+
+function add_despesa() {
+    valor = document.getElementById('valor');
+    desc = document.getElementById('descricao');
+    parcelas = document.getElementById('parcelas');
+    data =  document.getElementById('data');
+    nome_cartao = document.getElementById('cartao');
+    categoria = document.getElementById('categoria');
+
+    fetch('/add-despesa' , {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            valor: valor.value,
+            desc: desc.value,
+            parcelas: parcelas.value,
+            data: data.value,
+            nome_cartao: nome_cartao.value,
+            categoria: categoria.value
+        })
+    }).then(res => res.json()).then((res) => {
+        console.log(res)
+    });
+}

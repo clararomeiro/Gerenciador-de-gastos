@@ -20,13 +20,7 @@ class Controlador:
         self.cartoes.remove(result)
 
 
-    def adicionar_despesa(self, despesa: Despesa):
-        if despesa in self.despesas:
-            raise ValueError('Essa despesa já existe')
-
-        if despesa.id_cartao not in (c.id for c in self.cartoes): 
-            raise ValueError('Esse id de cartão não existe')
-
+    def adicionar_despesa(self, despesa: Despesa): 
         self.despesas.append(despesa)
 
     def remover_despesa(self, nome: str):
