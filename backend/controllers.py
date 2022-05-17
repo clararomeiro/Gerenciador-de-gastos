@@ -39,8 +39,16 @@ class Controlador:
     def prazo_lembrete(self, dias_antes: int):
         self.lembrete = dias_antes
 
-    def listar_despesas(self, data_inicio:date = None, data_fim:date = None):
-        return [despesa for despesa in self.despesas if data_inicio < despesa.data < data_fim]
+    def listar_despesas(self,
+        nome_cartao: str | None = None,
+        data_inicio: date = date.min,
+        data_fim: date = date.max
+    ):
+        return [despesa for despesa in self.despesas if
+            data_inicio < despesa.data < data_fim and
+            (True if nome_cartao is None else despesa.nome_cartao == nome_cartao)
+        ]
+        
 
     def gerar_grafico():
         pass
