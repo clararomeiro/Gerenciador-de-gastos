@@ -15,6 +15,7 @@ class Controlador:
     def remover_cartao(self, nome: str):
         try:
             result = next(cartao for cartao in self.cartoes if cartao.nome == nome)
+            self.despesas = [d for d in self.despesas if d.nome_cartao != nome]
         except StopIteration:
             raise KeyError('nome não encontrado')
         self.cartoes.remove(result)

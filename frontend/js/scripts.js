@@ -1,21 +1,3 @@
-class Cartao {
-    constructor() {
-        this.nome
-        this.bandeira
-        this.vencimento
-        this.valor
-    }
-    
-    adicionar() {
-        alert('Cartão adicionado com sucesso!');
-    }
-
-    adicionarDespesa(){
-        alert('Despesa adicionada com sucesso!')
-    }
-}
-
-
 function add_cartao() {
     var nome =  document.getElementById('nome');
     var limite =  document.getElementById('limite');
@@ -43,8 +25,9 @@ function add_cartao() {
 }
 
 function remove_cartao(nome) {
+    if (!confirm('Remover este cartão apagará também todas as despesas associadas ao cartão, proceguir?'))
+        return;
     fetch(`/remove-card?nome=${nome}`, {method: 'DELETE'});
-    alert('Cartão removido com sucesso!');
     window.location.reload();
 }
 
