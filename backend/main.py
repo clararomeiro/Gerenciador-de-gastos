@@ -35,10 +35,16 @@ def despesas_page(request: Request):
 
 
 @app.get('/consultas')
-def consultas_page(request: Request):
+def consultas_page(request: Request,
+    cartao: str | None = None,
+    data_ini: date = date.min,
+    data_fim: date = date.max
+):
+    despesas = system.listar_despesas(cartao, data_ini, data_fim)
     return tem.TemplateResponse('consultas.html', {
         'request': request,
-        'despesas': system.despesas
+        'cartoes': system.cartoes,
+        'despesas': despesas
     })
 
 

@@ -47,7 +47,7 @@
                 </select>
                 <input id="dia_vencimento" type="number" class="inputs" placeholder="Dia de Vencimento">
                 <input id="limite" type="number" class="inputs" placeholder="Limite">
-                <button onclick="add_cartao();window.location.reload()">Add</button>
+                <button onclick="add_cartao()">Add</button>
             </div>
         </div>
 
@@ -73,7 +73,7 @@
                             <th>{{ cartao.dia_vencimento }}</th>
                             <th>R${{'%.2f' % cartao.limite }}</th>
                             <th>
-                                <button onclick="remove_cartao('{{ cartao.nome }}');window.location.reload()">X</button>
+                                <button onclick="remove_cartao('{{ cartao.nome }}')">X</button>
                             </th>
                         </tr>
                         {% endfor %}

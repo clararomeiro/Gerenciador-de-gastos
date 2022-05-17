@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta jttp-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content = "width=device-widht, initial-scale=1.0">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
     <title>Minhas Despesas</title>
 
     <link rel="stylesheet" type="text/css" href="/frontend/css/styles.css" media="screen">
@@ -40,15 +40,19 @@
         <div class="box">
             <h2>Consultar Gastos e Relatórios</h2>
             <div id="consulta">
-                <input type="text" class="inputs" placeholder="Digite sua consulta aqui...">
-            </div>
-            <div id="consulta">
+                <h4>Cartão</h4>
+                <select name="Cartão" id="cartao">
+                    <option>Todos</option>
+                    {% for cartao in cartoes %}
+                        <option>{{cartao.nome}}</option>
+                    {% endfor %}
+                </select>
                 <h4>Data Inicio</h4>
                 <input type="date" id="data_ini" class="inputs" placeholder="Data de Inicio">
                 <h4>Data Final</h4>
                 <input type="date" id="data_fim" class="inputs" placeholder="Data Final">
             </div>
-            <button onclick="list_despesas();window.location.reload()">Search</button>
+            <button onclick="atualizar_consulta()">Search</button>
         </div>
 
         <div class="box">

@@ -39,10 +39,13 @@ function add_cartao() {
     });
 
     alert('Cartão adicionado com sucesso!');
+    window.location.reload();
 }
 
 function remove_cartao(nome) {
     fetch(`/remove-card?nome=${nome}`, {method: 'DELETE'});
+    alert('Cartão removido com sucesso!');
+    window.location.reload();
 }
 
 
@@ -75,22 +78,17 @@ function add_despesa() {
     alert('Despesa adicionada com sucesso!')
 }
 
-function list_despesas(){
-    data_ini = document.getElementById('data_ini');
-    data_fim = document.getElementById('data_fim');
+function atualizar_consulta(){
+    var url = '/consultas?'
 
-    fetch('/list-despesas' , {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-            data_ini: data_ini.value,
-            data_fim: data_fim.value
-        })
-    }).then(res => res.json()).then((res) => {
-        console.log(res)
-    });
+    if (cartao.value !== "Todos")
+        url += 'cartao=' + cartao.value;
 
+    if (data_ini.value)
+        url += 'data_ini=' + data_ini.value;
+
+    if (data_fim.value)
+        url += 'data_fim=' + data_fim.value;
+    
+    window.location.assign(url);
 }
