@@ -6,9 +6,10 @@ from backend.schemas import Cartao, Despesa
 from backend.controllers import Controlador
 from datetime import date
 from .utils import show_image
-
+from .test_values import adicionar_info
 
 system = Controlador()
+adicionar_info(system)
 
 tem = Jinja2Templates('frontend')
 
