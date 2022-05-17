@@ -41,15 +41,14 @@
             <h2>Consultar Gastos e Relatórios</h2>
             <div id="consulta">
                 <input type="text" class="inputs" placeholder="Digite sua consulta aqui...">
-                <button onclick="cartao.adicionar()">Search</button>
             </div>
             <div id="consulta">
                 <h4>Data Inicio</h4>
-                <input type="date" class="inputs" placeholder="Data de Inicio">
+                <input type="date" id="data_ini" class="inputs" placeholder="Data de Inicio">
                 <h4>Data Final</h4>
-                <input type="date" class="inputs" placeholder="Data Final">
+                <input type="date" id="data_fim" class="inputs" placeholder="Data Final">
             </div>
-            
+            <button onclick="list_despesas();window.location.reload()">Search</button>
         </div>
 
         <div class="box">
@@ -65,14 +64,16 @@
                         <th>Valor</th>
                     </thead>
                     <tbody>
+                        {% for despesa in despesas %}
                         <tr>
-                            <td>05/06/2022</td>
-                            <td>Visa</td>   
-                            <td>Exemplo</td>
-                            <td>Game</td>
-                            <td>5</td>
-                            <td>R$ 500</td>
+                            <th>{{ despesa.data }}</th>
+                            <td>{{ despesa.nome_cartao }}</td>
+                            <td>{{ despesa.categoria }}</td>   
+                            <td>{{ despesa.desc }}</td>
+                            <td>{{ despesa.parcelas }}</td>
+                            <td>R${{despesa.valor}}</td>
                         </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>

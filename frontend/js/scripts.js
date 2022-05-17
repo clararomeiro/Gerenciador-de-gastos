@@ -38,6 +38,8 @@ function add_cartao() {
     }).then(res => res.json()).then((res) => {
         console.log(res)
     });
+
+    alert('Cartão adicionado com sucesso!');
 }
 
 function add_despesa() {
@@ -65,4 +67,26 @@ function add_despesa() {
     }).then(res => res.json()).then((res) => {
         console.log(res)
     });
+
+    alert('Despesa adicionada com sucesso!')
+}
+
+function list_despesas(){
+    data_ini = document.getElementById('data_ini');
+    data_fim = document.getElementById('data_fim');
+
+    fetch('/list-despesas' , {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            data_ini: data_ini.value,
+            data_fim: data_fim.value
+        })
+    }).then(res => res.json()).then((res) => {
+        console.log(res)
+    });
+
 }
