@@ -41,7 +41,13 @@ def consultas_page(request: Request):
 def add_cartao(cartao: Cartao):
     system.adicionar_cartao(cartao)
 
+
+@app.delete('/remove-card')
+def remove_cartao(nome: str):
+    system.remover_cartao(nome)
+    return 'removido com sucesso'
+
+
 @app.post('/add-despesa')
 def add_despesa(despesa: Despesa):
     system.adicionar_despesa(despesa)
-    
