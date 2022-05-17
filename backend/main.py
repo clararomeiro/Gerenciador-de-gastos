@@ -4,8 +4,8 @@ from fastapi.staticfiles import StaticFiles
 
 from backend.schemas import Cartao, Despesa
 from backend.controllers import Controlador
+from datetime import date
 
-from datetime import datetime as date
 
 system = Controlador()
 
@@ -46,14 +46,24 @@ def consultas_page(request: Request):
 def add_cartao(cartao: Cartao):
     system.adicionar_cartao(cartao)
 
+
+@app.delete('/remove-card')
+def remove_cartao(nome: str):
+    system.remover_cartao(nome)
+    return 'removido com sucesso'
+
+
 @app.post('/add-despesa')
 def add_despesa(despesa: Despesa):
     system.adicionar_despesa(despesa)
-    
 
-@app.get('/list-despesas')
-def list_despesas(data_inicio: date, data_fim:date):
-    return tem.TemplateResponse('consultas.html', {
-        'request': request,
-        'despesas': system.listar_despesas(data_inicio, data_fim)
-    })
+
+@app.get('/list-despesas', response_model=list[Despesa])
+def listar_despesas(
+    nome_cartao: str | None = None,
+    data_inicio: date = date.min,
+    data_fim: date = date.max
+) -> list[Despesa]:
+    return system.listar_despesas(nome_cartao, data_inicio, data_fim)
+
+

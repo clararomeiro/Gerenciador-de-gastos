@@ -61,6 +61,7 @@
                         <th>Bandeira</th>
                         <th>Dia de Vencimento</th>
                         <th>Limite</th>
+                        <th>Remover</th>
                     </thead>
                     <!-- Conteudo Aqui -->
                     <tbody>
@@ -71,6 +72,9 @@
                             <th>{{ cartao.bandeira }}</th>
                             <th>{{ cartao.dia_vencimento }}</th>
                             <th>R${{'%.2f' % cartao.limite }}</th>
+                            <th>
+                                <button onclick="remove_cartao('{{ cartao.nome }}');window.location.reload()">X</button>
+                            </th>
                         </tr>
                         {% endfor %}
                     </tbody>

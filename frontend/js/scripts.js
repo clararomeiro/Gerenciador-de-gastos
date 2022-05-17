@@ -15,13 +15,12 @@ class Cartao {
     }
 }
 
-var cartao = new Cartao();
 
 function add_cartao() {
-    nome =  document.getElementById('nome');
-    limite =  document.getElementById('limite');
-    bandeira =  document.getElementById('bandeira');
-    dia_vencimento =  document.getElementById('dia_vencimento');
+    var nome =  document.getElementById('nome');
+    var limite =  document.getElementById('limite');
+    var bandeira =  document.getElementById('bandeira');
+    var dia_vencimento =  document.getElementById('dia_vencimento');
 
     fetch('/add-card' , {
         method: 'POST',
@@ -41,6 +40,11 @@ function add_cartao() {
 
     alert('Cartão adicionado com sucesso!');
 }
+
+function remove_cartao(nome) {
+    fetch(`/remove-card?nome=${nome}`, {method: 'DELETE'});
+}
+
 
 function add_despesa() {
     valor = document.getElementById('valor');
