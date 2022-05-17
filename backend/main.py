@@ -5,6 +5,7 @@ from fastapi.staticfiles import StaticFiles
 from backend.schemas import Cartao, Despesa
 from backend.controllers import Controlador
 from datetime import date
+from .utils import show_image
 
 
 system = Controlador()
@@ -41,10 +42,12 @@ def consultas_page(request: Request,
     data_fim: date = date.max
 ):
     despesas = system.listar_despesas(cartao, data_ini, data_fim)
+
     return tem.TemplateResponse('consultas.html', {
         'request': request,
         'cartoes': system.cartoes,
-        'despesas': despesas
+        'despesas': despesas,
+        'image': show_image(despesas)
     })
 
 

@@ -7,11 +7,11 @@
     <meta name="viewport" content = "width=device-width, initial-scale=1.0">
     <title>Minhas Despesas</title>
 
-    <link rel="stylesheet" type="text/css" href="/frontend/css/styles.css" media="screen">
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap">
+    <link rel="stylesheet" type="text/css" href="/frontend/css/styles.css">
     
     <script src="/frontend/js/scripts.js"></script>
 </head>
@@ -52,7 +52,9 @@
                 <h4>Data Final</h4>
                 <input type="date" id="data_fim" class="inputs" placeholder="Data Final">
             </div>
-            <button onclick="atualizar_consulta()">Search</button>
+            <div class="content">
+                <button onclick="atualizar_consulta()">Search</button>
+            </div>
         </div>
 
         <div class="box">
@@ -83,7 +85,11 @@
             </div>
             
             </div>
-
+            <div class="box">
+                <div class="content">
+                    <img src="data:image/jpeg;base64,{{image}}" alt="Red dot" style="width: 100%;"/>
+                </div>
+            </div>
     </main>
 </body>
 </html>

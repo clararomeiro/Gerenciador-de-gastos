@@ -71,15 +71,11 @@ a:visited{
 
 
 div.box{
-    justify-content: center;
-    margin: 180px;
-    margin-top: 50px;
-    margin-bottom: 50px;
     background-color: white;
+    margin: 50px 180px;
     border-radius: 5px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.218);
 }
-
 
 h2{
     padding-top: 20px;
@@ -92,9 +88,7 @@ h2{
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-left: 25px;
-    padding-right: 40px;
-    padding-bottom: 20px;
+    padding: 20px 40px;
 }
 
 .inputs{
@@ -118,8 +112,8 @@ button{
 }
 
 #consulta{
-    display:flex;
-    justify-content:center;
+    display: flex;
+    justify-content: center;
     padding-left: 25px;
     padding-right: 40px;
     padding-bottom: 20px;
@@ -135,6 +129,7 @@ table {
 
 #tabela{
     padding-bottom: 10px;
+    padding: auto;
 }
 
 td{
