@@ -62,16 +62,19 @@ function add_despesa() {
 }
 
 function atualizar_consulta(){
-    var url = '/consultas?'
-
+    var url = '/consultas?';
+    var param = [];
+    
     if (cartao.value !== "Todos")
-        url += 'cartao=' + cartao.value;
+        param.push('cartao=' + cartao.value);
 
     if (data_ini.value)
-        url += 'data_ini=' + data_ini.value;
+        param.push('data_ini=' + data_ini.value);
 
     if (data_fim.value)
-        url += 'data_fim=' + data_fim.value;
+        param.push('data_fim=' + data_fim.value);
     
+    url += param.join('&');
+
     window.location.assign(url);
 }
